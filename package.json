@@ -1,8 +1,8 @@
 {
-  "name": "post",
+  "name": "jcpost",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "hcc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +10,8 @@
     "jcpost": "./hcc.js"
   },
   "author": "= <jon@jonwohl.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.15.1"
+  }
 }
