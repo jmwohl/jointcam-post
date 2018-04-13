@@ -16,7 +16,7 @@ program
 loadfile();
 
 function loadfile() {
-    console.log('loading file', filename);
+    console.log('Loading file', filename);
     fs.readFile(filename, 'utf8', (err, data) => {
       if (err) throw err;
       var converted = convert(data);
@@ -28,18 +28,16 @@ function writeFile(contents) {
     var filepath = path.parse(filename);
     fs.writeFile(filepath.name + '.out' +filepath.ext, contents, (err) => {
       if (err) throw err;
-      console.log('File saved.');
+      console.log('File converted.');
     });
 }
 
 function convert(contents) {
-    // console.log('convert', contents);
     // replace x y z i j f
     return contents.replace(/([XYZIJF])(.*?)\s/g, inToMm);
 }
 
 function inToMm(match, dim, inches) {
-    // console.log(dim, inches);
     var mm = parseFloat(inches) * 25.4;
     return dim + mm.toFixed(3);
 }
