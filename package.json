@@ -1,0 +1,14 @@
+{
+  "name": "post",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jcpost": "./hcc.js"
+  },
+  "author": "= <jon@jonwohl.com>",
+  "license": "MIT"
+}
