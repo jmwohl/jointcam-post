@@ -8,6 +8,7 @@ var program = require('commander'),
 program
     .version('0.1')
     .arguments('[filename]')
+    .option('-i, --inplace', 'Perform conversion in place.')
     .action(function(fn) {
         filename = fn;
     })
@@ -26,7 +27,8 @@ function loadfile() {
 
 function writeFile(contents) {
     var filepath = path.parse(filename);
-    fs.writeFile(filepath.name + '.out' +filepath.ext, contents, (err) => {
+    var name = program.inplace ? filename : filepath.name + '.out' + filepath.ext;
+    fs.writeFile(name, contents, (err) => {
       if (err) throw err;
       console.log('File converted.');
     });
